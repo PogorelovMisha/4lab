@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Kalam');
+
+.row--1 {
+  display: table;
+  width: 100%;
+}
+
+.row--1:before {
+    content: "table"
+  }
+
+.row--1 .cell {
+    display: table-cell;
+  }
+
+.row--2:before {
+    content: "float"
+  }
+
+.row--2 .cell {
+    box-sizing: border-box;
+    width: 33.33%;
+    float: left;
+  }
+
+.row--2:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.row--3:before {
+    content: "inline-block"
+  }
+
+.row--3 .cell {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 33.33%;
+  }
+
+.row--4 {
+  display: flex;
+}
+
+.row--4:before {
+    content: "flexbox"
+  }
+
+.row--4 .cell {
+    flex: 1 0 auto;
+  }
+
+
+.row--5 {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+
+.row--5:before {
+    content: "grid"
+  }
+
+
+
+body {
+  padding: 20px;
+  background-color: #333;
+  color: #eee;
+  font-family: Roboto, Arial, sans-serif;
+  
+  counter-reset: hide;       
+}
+
+h2 {
+  margin: 0 0 .25em 0;
+  font-size: 2em;
+  font-family: 'Kalam', cursive;
+  font-weight: normal;
+  color: gold;
+}
+
+em {
+  color: gold;
+  font-family: 'Kalam', cursive;
+  font-style: normal;
+}
+
+h3 {
+  margin: 0 0 2em 0;
+  font-weight: normal;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hide {
+  position: relative;
+  flex: 0 1 280px;
+  background-color: #393939;
+  border: 1px solid #404040;
+}
+
+.hide::before {
+  display: inline-block;
+  padding: 1em;
+  counter-increment: hide;                
+  content: counter(hide) ". " attr(data-with); 
+  font-size: 90%;
+  color: #aaa;
+}
+
+.cell {
+  padding: 1em 0;
+  border: 1px solid #494949;
+  background-color: #444;
+  color: #333;
+  text-align: center;
+}
+
+.row {
+  position: relative;
+}
+
+.row:before {
+    position: absolute;
+    top: 1em;
+    left: .5em;
+    color: #888;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(15,15,15,.5)
+  }

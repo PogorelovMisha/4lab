@@ -1,0 +1,11 @@
+.media {
+   display: flex
+}
+
+.media-body {
+   flex: 1
+}
+
+.media {
+  align-items: flex-start 
+}
